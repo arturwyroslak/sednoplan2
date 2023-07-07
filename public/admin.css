@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.quill-editor {
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#save-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#save-button:hover {
+    background-color: #ddd;
+}
