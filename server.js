@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { Pool } = require('pg');
 
 const connectionString = 'postgresql://postgres:Sednoplan1234@db.ljkcmffwbwlghohzwipj.supabase.co:5432/postgres';
@@ -10,7 +11,7 @@ const app = express();
 
 // Dodaj to, aby automatycznie przetwarzać ciała żądań JSON
 app.use(express.json());
-
+app.use(cors());
 app.get('/modals/:id', async (req, res) => {
     const { id } = req.params;
 
