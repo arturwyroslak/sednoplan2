@@ -6,12 +6,12 @@ body {
 }
 
 .quill-editor {
-    height: 200px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    color: #333;
-    padding: 10px;
-    border-radius: 5px;
+            height: 297mm; /* height of A4 */
+            width: 210mm; /* width of A4 */
+            padding: 20mm; /* padding for A4 */
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
 }
 
 #save-button {
