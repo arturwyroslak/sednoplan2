@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var content = quillEditors[id].getContents();
 
             // Wyślij żądanie do backendu o zapisanie treści
-            fetch('https://sednoplan.vercel.app/modals/' + id, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ content: content })
-            })
+            fetch('http://localhost:3000/modals/' + id, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ content: content })
+})
+
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
