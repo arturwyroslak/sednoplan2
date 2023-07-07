@@ -8,6 +8,9 @@ const pool = new Pool({
 
 const app = express();
 
+// Dodaj to, aby automatycznie przetwarzać ciała żądań JSON
+app.use(express.json());
+
 app.get('/modals/:id', async (req, res) => {
     const { id } = req.params;
 
@@ -18,6 +21,21 @@ app.get('/modals/:id', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Wystąpił błąd podczas pobierania treści modalu');
+    }
+});
+
+// Dodaj to, aby obsługiwać żądania POST do /modals/:id
+app.post('/modals/:id', async (req, res) => {
+    const { id } = req.params;
+    const { content } = req.body;
+
+    // Zapisz treść modalu do bazy danych
+    try {
+        await pool.query('UPDATE modals SET content = $1 WHERE id = $2', [content, id]);
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Wystąpił błąd podczas zapisywania treści modalu');
     }
 });
 
