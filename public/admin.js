@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Obsługa zapisywania zmian
-    document.querySelector('#save-button').addEventListener('click', function() {
-        for (var id in quillEditors) {
+    // Obsługa zapisywania zmian dla każdego edytora
+    for (var id in quillEditors) {
+        document.querySelector('#save-button' + id.replace('modal', '')).addEventListener('click', function() {
             var content = quillEditors[id].getContents();
 
             // Wyślij żądanie do backendu o zapisanie treści
@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('Nie udało się zapisać treści modalu ' + id);
                 }
             });
-        }
-    });
+        });
+    }
 });
