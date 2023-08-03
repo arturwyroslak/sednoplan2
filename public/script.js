@@ -8,7 +8,7 @@ for (var i = 0; i < infoIcons.length; i++) {
         var modalId = event.target.dataset.target;
 
         // Wyślij żądanie do backendu o pobranie treści dla modalu
-        fetch('https://your-backend.com/modals/' + modalId)
+        fetch('https://sednoplanapp.vercel.app/modals/' + modalId)
             .then(response => response.json())
             .then(data => {
                 // Aktualizuj treść modalu
