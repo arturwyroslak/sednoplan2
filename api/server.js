@@ -12,7 +12,7 @@ const app = express();
 // Dodaj to, aby automatycznie przetwarzać ciała żądań JSON
 app.use(express.json());
 app.use(cors({
-    origin: 'https://sednoplan.vercel.app'
+    origin: 'https://sednoplan2.vercel.app'
 }));
 app.get('/modals/:id', async (req, res) => {
     const { id } = req.params;
