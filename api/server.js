@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
  
-const connectionString = 'postgresql://postgres:Sednoplan1234@db.ljkcmffwbwlghohzwipj.supabase.co:5432/postgres';
+const connectionString = 'postgresql://postgres:!Abarzur1234@db.vhfafkdxcvqxkvctzzcu.supabase.co:5432/postgres';
 const pool = new Pool({
     connectionString: connectionString,
 });
