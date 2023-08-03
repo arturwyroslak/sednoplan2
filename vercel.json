@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "Sednoplan",
+  "name": "sednoplanapp",
   "builds": [
     {
       "src": "api/server.js",
