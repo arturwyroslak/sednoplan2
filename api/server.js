@@ -16,8 +16,6 @@ app.use(cors({
 }));
 app.get('/modals/:id', async (req, res) => {
     const { id } = req.params;
-
-    // Pobierz treść modalu z bazy danych
     try {
         const result = await pool.query('SELECT content FROM modals WHERE id = $1', [id]);
         res.json(result.rows[0]);
