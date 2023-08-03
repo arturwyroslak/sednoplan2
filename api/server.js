@@ -39,3 +39,6 @@ app.post('/modals/:id', async (req, res) => {
         res.status(500).send('Wystąpił błąd podczas zapisywania treści modalu');
     }
 });
+app.listen(3000, () => {
+    console.log('Serwer działa na porcie 3000');
+});
